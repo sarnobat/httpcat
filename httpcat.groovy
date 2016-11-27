@@ -25,6 +25,7 @@ public class HttpCat {
 		@javax.ws.rs.Path("")
 		@Produces("application/json")
 		public Response list(@QueryParam("value") String iValue,
+				@QueryParam("key") String iKey,
 				@QueryParam("categoryId") String iCategoryId)
 				throws JSONException, IOException {
 System.err.println("list()");
