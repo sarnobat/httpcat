@@ -1,6 +1,7 @@
 URL=$1
 FILE_WITH_QUERY_PARAMS=`basename $1`
-FILE=`echo $FILE_WITH_QUERY_PARAMS | perl -pe 's{\?.*}{}g'`
+FILE=`echo $FILE_WITH_QUERY_PARAMS | perl -pe 's{\?.*}{}g'
+# !!!!!!!!!!!!!!! Handle duplicates`
 wget \
 	--directory-prefix=/Unsorted/new/images/ \
 	--content-disposition \
