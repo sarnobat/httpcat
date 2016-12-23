@@ -33,6 +33,7 @@ public class HttpCat {
 System.err.println("list()");
 String line = iCategoryId + "::" + System.currentTimeMillis() + "::" + iValue;
 System.err.println("Writing to stdout: " + line);
+// I wish I didn't have to do this in Java but I found that even though the browser was returning success, nothing was getting written to the file.
 FileUtils.write(Paths.get(System.getProperty("user.home") + "/sarnobat.git/yurl_queue_httpcat.txt").toFile(), line + "\n", true);
 System.out.println(line);
 			return Response.ok().header("Access-Control-Allow-Origin", "*")
