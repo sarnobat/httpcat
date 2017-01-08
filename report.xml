@@ -25,11 +25,28 @@
       <os_version>#39~14.04.1-Ubuntu SMP Fri Mar 11 11:38:02 UTC 2016</os_version>
       <host>nuc</host>
       <arch>x86_64</arch>
-      <command_line>tcpflow -i any -C -J port 4467</command_line>
+      <command_line>tcpflow -i any -C -J port 4452</command_line>
       <uid>0</uid>
-      <start_time>2016-12-21T23:43:41Z</start_time>
+      <start_time>2016-12-22T05:37:11Z</start_time>
     </execution_environment>
   </creator>
   <configuration>
   </configuration>
   <tdelta>0</tdelta>
+  <configuration>
+    <fileobject>
+      <filesize>0</filesize>
+      <tcpflow startime='2016-12-21T21:45:45.051865Z' endtime='2016-12-21T21:45:55.070418Z' src_ipn='73.241.9.124' dst_ipn='192.168.1.3' mac_daddr='00:00:00:01:00:06' mac_saddr='c4:3d:c7:6c:5f:14' packets='3' srcport='52052' dstport='4452' family='2' />
+    </fileobject>
+    <fileobject>
+      <filesize>0</filesize>
+      <tcpflow startime='2016-12-21T21:45:45.051939Z' endtime='2016-12-21T21:45:55.070975Z' src_ipn='192.168.1.3' dst_ipn='73.241.9.124' mac_daddr='00:04:00:01:00:06' mac_saddr='ec:a8:6b:f9:7e:84' packets='2' srcport='4452' dstport='52052' family='2' />
+    </fileobject>
+    <fileobject>
+      <filesize>0</filesize>
+      <tcpflow startime='2016-12-21T21:45:45.054156Z' endtime='2016-12-21T21:45:55.071054Z' src_ipn='73.241.9.124' dst_ipn='192.168.1.3' mac_daddr='00:00:00:01:00:06' mac_saddr='c4:3d:c7:6c:5f:14' packets='3' srcport='52054' dstport='4452' family='2' />
+    </fileobject>
+    <fileobject>
+      <filesize>0</filesize>
+      <tcpflow startime='2016-12-21T21:45:45.054229Z' endtime='2016-12-21T21:45:55.071524Z' src_ipn='192.168.1.3' dst_ipn='73.241.9.124' mac_daddr='00:04:00:01:00:06' mac_saddr='ec:a8:6b:f9:7e:84' packets='2' srcport='4452' dstport='52054' family='2' />
+    </fileobject>
