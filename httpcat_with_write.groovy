@@ -33,8 +33,8 @@ public class HttpCat {
 System.err.println("list()");
 String line = iCategoryId + "::" + System.currentTimeMillis() + "::" + iValue;
 System.err.println("Writing to stdout: " + line);
-System.err.println("[DEBUG] about to write to file");
-FileUtils.write(Paths.get(System.getProperty("user.home") + "sarnobat.git/yurl_queue_httpcat.txt").toFile(), line + "\n", true);
+System.err.println("[DEBUG] about to write to file: " + System.getProperty("user.home") + "/sarnobat.git/yurl_queue_httpcat.txt");
+FileUtils.write(Paths.get(System.getProperty("user.home") + "/sarnobat.git/yurl_queue_httpcat.txt").toFile(), line + "\n", true);
 System.err.println("[DEBUG] wrote to file");
 System.out.println(line);
 			return Response.ok().header("Access-Control-Allow-Origin", "*")
