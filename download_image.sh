@@ -1,6 +1,4 @@
-# This is not reliable enough. Use groovy
-# among the problems:
-#   * removing query strings from wget (--content-disposition doesn't work)
+# !!!!!!!!!!!!!!!!!!! Handle duplicates in wget.sh
 while read line
 do
   echo "$line"
