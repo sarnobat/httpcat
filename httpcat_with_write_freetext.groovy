@@ -28,7 +28,8 @@ public class HttpCat {
 		@Produces("application/json")
 		public Response list(@QueryParam("value") String iValue,
 				@QueryParam("key") String iKey,
-				@QueryParam("categoryId") String iCategoryId)
+				@QueryParam("categoryId") String iCategoryId,
+				@QueryParam("freetext") String iFreetext)
 				throws JSONException, IOException {
 System.err.println("list()");
 String line = iCategoryId + "::" + System.currentTimeMillis() + "::" + iValue;
@@ -37,6 +38,8 @@ System.err.println("Writing to stdout: " + line);
 System.err.println("[DEBUG] about to write to file: " + filepath);
 FileUtils.write(Paths.get(filepath).toFile(), line + "\n", true);
 System.err.println("[DEBUG] wrote to file");
+System.err.println("[DEBUG] freetext = " + iFreetext);
+FileUtils.write(Paths.get(calendarpath).toFile(), iFreetext + " ( " + iValue+ " )\n", true);
 System.out.println(line);
 			return Response.ok().header("Access-Control-Allow-Origin", "*")
 					.type("application/json").build();
@@ -44,11 +47,15 @@ System.out.println(line);
 	}
 
 	private static String filepath;// = System.getProperty("user.home") + "/sarnobat.git/yurl_queue_httpcat.txt";
+	private static String calendarpath;
 	public static void main(String[] args) throws URISyntaxException, IOException,
 			KeyManagementException, UnrecoverableKeyException, NoSuchAlgorithmException,
 			KeyStoreException, CertificateException, InterruptedException {
-		if (args.length > 1) {
+		if (args.length > 2) {
 			filepath = args[1];
+			calendarpath = args[2];
+		} else {
+			throw new RuntimeException("Not enough args. PORT YURL CALENDAR");
 		}
 		try {
 			JdkHttpServerFactory.createHttpServer(new URI("http://localhost:" + args[0] + "/"),
