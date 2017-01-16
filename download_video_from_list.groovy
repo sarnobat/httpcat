@@ -15,13 +15,14 @@ public class DownloadVideosFromList {
 	public static final String YOUTUBE_DOWNLOAD = "/home/sarnobat/bin/youtube_download";
 
 	public static void main(String[] args) throws IOException, InterruptedException {
-		if (args.length != 3) {
+		if (args.length != 4) {
 			throw new RuntimeException(
 					"Usage: groovy download_file_from_list.groovy [list.txt] [/destdir] [success.txt] ");
 		}
 		String listFile = args[0];
 		String destinationDir = args[1];
 		String successFilePath = args[2];
+		String failureFilePath = args[3];
 		File listfile1 = Paths.get(listFile).toFile();
 
 		while (true) {
@@ -38,11 +39,13 @@ public class DownloadVideosFromList {
 			Process p = new ProcessBuilder().directory(Paths.get(destinationDir).toFile())
 					.command(ImmutableList.of(YOUTUBE_DOWNLOAD, url)).inheritIO().start();
 			p.waitFor();
+			String successOrFailureFilePath;
 			if (p.exitValue() == 0) {
 				System.err.println("appendToTextFile() - successfully downloaded " + url);
+				successOrFailureFilePath = successFilePath;
 			} else {
 				System.err.println("appendToTextFile() - error downloading " + url);
-				continue;
+				successOrFailureFilePath = failureFilePath;
 			}
 
 			// TODO: Check that the file exists locally
@@ -51,8 +54,8 @@ public class DownloadVideosFromList {
 			linesList.remove(0);
 			FileUtils.writeLines(listfile1, linesList);
 
-			// Write the url to a success file
-			File successFile = Paths.get(successFilePath).toFile();
+			// Write the url to either the success file or the failure file
+			File successFile = Paths.get(successOrFailureFilePath).toFile();
 			FileUtils.writeLines(successFile, ImmutableList.of(url), true);
 
 			// print the URL in case we want to do more things after (but note
