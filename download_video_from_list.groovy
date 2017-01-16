@@ -31,15 +31,18 @@ public class DownloadVideosFromList {
 				return;
 			}
 			String url = linesList.get(0);
+			if (!url.contains("yout") && !url.contains("dailymo")) {
+				throw new RuntimeException("This should have gotten filtered: " + url);
+			}
 
 			Process p = new ProcessBuilder().directory(Paths.get(destinationDir).toFile())
-					.command(ImmutableList.of(Yurl.YOUTUBE_DOWNLOAD, url)).inheritIO().start();
+					.command(ImmutableList.of(YOUTUBE_DOWNLOAD, url)).inheritIO().start();
 			p.waitFor();
 			if (p.exitValue() == 0) {
 				System.err.println("appendToTextFile() - successfully downloaded " + url);
 			} else {
 				System.err.println("appendToTextFile() - error downloading " + url);
-				throw new RuntimeException("Error downloading " + url);
+				continue;
 			}
 
 			// TODO: Check that the file exists locally
@@ -59,3 +62,4 @@ public class DownloadVideosFromList {
 	}
 
 }
+
