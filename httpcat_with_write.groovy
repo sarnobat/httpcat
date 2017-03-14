@@ -54,7 +54,7 @@ System.out.println(line);
 			JdkHttpServerFactory.createHttpServer(new URI("http://localhost:" + args[0] + "/"),
 					new ResourceConfig(MyResource.class));
 		} catch (Exception e) {
-			// e.printStackTrace();
+			e.printStackTrace();
 			System.err.println("Port already listened on.");
 			System.exit(-1);
 		}
