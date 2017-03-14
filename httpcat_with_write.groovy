@@ -72,23 +72,30 @@ public class HttpCat {
         System.out.println("CommandLineOptionsExample.parse() - SRIDHAR: a = " + cmd.getOptionValue("f"));
 
         if (cmd.hasOption("h")) {
+        
+        System.out.println("CommandLineOptionsExample.parse() - SRIDHAR: 1");
           // This prints out some help
           HelpFormatter formater = new HelpFormatter();
 
           formater.printHelp("Main", options);
           System.exit(0);
         }
+                System.out.println("CommandLineOptionsExample.parse() - SRIDHAR: 2");
       } catch (ParseException e) {
+              System.out.println("CommandLineOptionsExample.parse() - SRIDHAR: 3");
         e.printStackTrace();
       }
     }
     try {
-      JdkHttpServerFactory.createHttpServer(new URI("http://localhost:" + args[0] + "/"),
-          new ResourceConfig(MyResource.class));
+            System.out.println("CommandLineOptionsExample.parse() - SRIDHAR: 4");
+      JdkHttpServerFactory.createHttpServer(new URI("http://localhost:" + port + "/"), new ResourceConfig(MyResource.class));
+                  System.out.println("CommandLineOptionsExample.parse() - SRIDHAR: 5");
     } catch (Exception e) {
+                  System.out.println("CommandLineOptionsExample.parse() - SRIDHAR: 7");    
       e.printStackTrace();
       System.err.println("Port already listened on.");
       System.exit(-1);
     }
+            System.out.println("CommandLineOptionsExample.parse() - SRIDHAR: 6");
   }
 }
