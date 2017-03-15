@@ -77,13 +77,14 @@ public class HttpCat {
           // This prints out some help
           HelpFormatter formater = new HelpFormatter();
 
-          formater.printHelp("Main", options);
+          formater.printHelp("httpcat_with_write.groovy", options);
           System.exit(0);
         }
   //              System.out.println("CommandLineOptionsExample.parse() - SRIDHAR: 2");
       } catch (ParseException e) {
     //          System.out.println("CommandLineOptionsExample.parse() - SRIDHAR: 3");
         e.printStackTrace();
+	System.exit(-1);
       }
     }
     try {
