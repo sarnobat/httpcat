@@ -523,3 +523,14 @@
 46::1490074741573::http://www.gnu.org/software/bash/manual/html_node/ANSI_002dC-Quoting.html#ANSI_002dC-Quoting
 45::1490079400074::https://www.journalism.cuny.edu/academics/media-specialties/visual-journalism/
 45::1490079401044::https://en.wikipedia.org/wiki/Visual_journalism
+45::1490126928803::http://transom.org/2014/brief-history-of-documentary-forms/#nanook
+45::1490128350251::https://en.wikipedia.org/wiki/Yakutsk
+45::1490128364834::https://www.google.com/search?q=line+envy&oq=line+envy&aqs=chrome..69i57j0l5.1861j0j7&sourceid=chrome&es_sm=91&ie=UTF-8
+45::1490128389036::https://en.wikipedia.org/wiki/Line_of_beauty
+46::1490134987108::http://serverfault.com/questions/249395/shell-check-if-variable-begins-with#
+45::1490138201857::http://www.walesonline.co.uk/whats-on/film-tv/what-original-cast-gladiators-looks-9865335
+45::1490138207148::http://i1.walesonline.co.uk/incoming/article9865384.ece/ALTERNATES/s615b/MAIN-Gladiators-reuinte-for-Saturday-Night-Show.jpg
+45::1490138720164::https://en.wikipedia.org/wiki/Television_documentary
+45::1490138724260::https://en.wikipedia.org/wiki/Video_journalism
+45::1490138733950::http://www.indiewire.com/2015/02/sundance-is-it-documentary-or-journalism-248215/
+45::1490146401993::https://www.justit.co.uk/individual-training/developers-programme/?gclid=CIypgcWU49ICFYEy0wod-cgPwQ
