@@ -38,7 +38,7 @@ number_of_urls=60
 cat "$httpcat_urls_not_mimetyped" \
 	| grep http \
 	| head -"$number_of_urls" \
-	|  xargs --delimiter '\n' --max-args=1 bash ~/bin/httpcat_mimetype.sh \
+	|  xargs --delimiter '\n' --max-args=1 sh ~/bin/httpcat_mimetype.sh \
 	| tee -a ~/sarnobat.git/db/yurl_flatfile_db/auto/yurl_httpcat_urls_mimetyped.txt
 	
 2> echo "file updated: ~/sarnobat.git/db/yurl_flatfile_db/auto/yurl_httpcat_urls_mimetyped.txt"	

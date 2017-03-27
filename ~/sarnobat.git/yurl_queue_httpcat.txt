@@ -983,3 +983,7 @@
 45::1490588659554::https://s-media-cache-ak0.pinimg.com/564x/28/c6/02/28c6026ca80435829339e18441cd8dbe.jpg
 45::1490588661529::https://s-media-cache-ak0.pinimg.com/564x/cd/2d/f4/cd2df412304759c29dab5b0f8cefd98d.jpg
 45::1490588662211::https://s-media-cache-ak0.pinimg.com/564x/fe/bc/7e/febc7e39c6caec00a1d2235badaff974.jpg
+46::1490593290625::http://stackoverflow.com/questions/2990414/echo-that-outputs-to-stderr
+46::1490593291465::http://stackoverflow.com/questions/9666102/bash-double-bracket-issue
+46::1490593292105::http://stackoverflow.com/questions/13509508/check-if-string-is-neither-empty-not-space-in-shell-script
+46::1490593293783::http://unix.stackexchange.com/questions/146942/how-can-i-test-if-a-variable-is-empty-or-contains-only-spaces
