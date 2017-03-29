@@ -1003,3 +1003,17 @@
 45::1490655796972::https://www.theguardian.com/media/blog/2011/jul/07/news-of-the-world-closes-live-coverage
 45::1490655802355::https://www.forbes.com/sites/stevendennis/2017/02/13/sears-is-the-end-finally-in-sight-for-the-worlds-slowest-liquidation-sale/#29a279db1a3d
 45::1490658521485::https://www.google.com/search?q=obnoxious+telephone+customer+service&oq=obnoxious+telephone+customer+service+&aqs=chrome..69i57.10390j0j7&sourceid=chrome&es_sm=91&ie=UTF-8
+46::1490736903307::http://classroom.synonym.com/advantages-heap-sort-8553794.html
+46::1490741186277::http://stackoverflow.com/questions/8558453/how-to-convert-string-to-reader-in-java
+46::1490743943691::http://stackoverflow.com/questions/10637369/compact-way-to-create-guava-multimaps
+46::1490743947633::http://stackoverflow.com/questions/27877210/reading-csv-line-by-line-using-opencsv-and-fifobuffer
+46::1490743948889::https://dzone.com/articles/csv-operations-using-opencsv
+29172::1490765294443::http://images.celebritymoviearchive.com/members/thumbs/sd/c/1261/cma-SarahMichelleGellar%40AccessHollywood1_2-500.jpg
+29172::1490765295942::http://images.celebritymoviearchive.com/members/thumbs/sd/c/1261/cma-SarahMichelleGellar%40AccessHollywood1_2-500.jpg
+29172::1490765296828::http://images.celebritymoviearchive.com/members/thumbs/sd/c/1261/cma-SarahMichelleGellar%40AccessHollywood1_3-500.jpg
+29172::1490765297599::http://images.celebritymoviearchive.com/members/thumbs/sd/c/1261/cma-SarahMichelleGellar%40AccessHollywood1_4-500.jpg
+29172::1490765300042::http://images.celebritymoviearchive.com/members/thumbs/sd/c/1261/cma-SarahMichelleGellar%40AccessHollywood1_1-500.jpg
+29172::1490765398808::https://s-media-cache-ak0.pinimg.com/236x/c2/80/87/c28087e9ad7d8bd57dda3a1425936913.jpg
+29172::1490765406320::http://www.hollywoodreporter.com/sites/default/files/2012/06/charlize_theron_top_10.jpg
+29172::1490765407852::https://s-media-cache-ak0.pinimg.com/236x/02/2d/38/022d385ddfbd5a3834c2754b6ef65920.jpg
+46::1490765462575::http://stackoverflow.com/questions/2102499/iterating-through-a-list-in-reverse-order-in-java
