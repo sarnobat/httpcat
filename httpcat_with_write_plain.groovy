@@ -20,6 +20,7 @@ import org.glassfish.jersey.jdkhttp.JdkHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.json.JSONException;
 
+/** Just write the value. No key. */
 public class HttpCat {
 
   @javax.ws.rs.Path("")
