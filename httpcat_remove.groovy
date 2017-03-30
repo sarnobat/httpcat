@@ -42,7 +42,7 @@ public class HttpCatRemove {
 			List<String> lines = FileUtils.readLines(new File(filepath),
 					Charset.defaultCharset());
 			if (lines.remove(iValue)) {
-				FileUtils.writeLines(Paths.get(filepath).toFile(), lines, true);
+				FileUtils.writeLines(Paths.get(filepath).toFile(), lines, false);
 				System.err.println("[DEBUG] Successfully removed from file: "
 						+ iValue);
 				return Response.ok().header("Access-Control-Allow-Origin", "*")
@@ -78,8 +78,8 @@ public class HttpCatRemove {
 
 			// This doesn't work with java 7
 			// "hasarg" is needed when the option takes a value
-//			options.addOption(Option.builder("p").longOpt("port").hasArg()
-//					.required().build());
+			options.addOption(Option.builder("p").longOpt("port").hasArg()
+					.required().build());
 
 			try {
 				CommandLine cmd = new DefaultParser().parse(options, args);
