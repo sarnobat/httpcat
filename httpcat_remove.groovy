@@ -35,6 +35,7 @@ public class HttpCatRemove {
 		@Produces("application/json")
 		public Response list(@QueryParam("value") String iValue)
 				throws JSONException, IOException {
+                                System.err.println("[DEBUG] begin: " + iValue)
 			// I wish I didn't have to do this in Java but I found that even
 			// though the browser was returning success, nothing was getting
 			// written to the file.
