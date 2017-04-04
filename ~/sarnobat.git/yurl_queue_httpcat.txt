@@ -1176,3 +1176,16 @@
 46::1491202023761::http://stackoverflow.com/questions/1279953/how-to-execute-the-output-of-a-command-within-the-current-shell
 45::1491202031103::https://www.google.com/search?q=are+prom+dresses+sexist&oq=are+prom+dresses+sexist&aqs=chrome..69i57.3191j0j7&sourceid=chrome&es_sm=91&ie=UTF-8
 45::1491202048306::https://www.boston.com/news/national-news/2017/03/30/good-girl-prom-dress-flyers-draw-criticism-for-florida-school
+46::1491277208236::http://stackoverflow.com/questions/11106671/google-maps-api-multiple-markers-with-infowindows
+46::1491277208926::http://jsfiddle.net/ZFvDV/
+46::1491278694427::http://stackoverflow.com/questions/24658365/img-tag-displays-wrong-orientation
+46::1491279443840::https://jsfiddle.net/orotemo/obvna6qn/1/
+46::1491279445146::https://gist.github.com/runeb/c11f864cd7ead969a5f0
+46::1491279447507::http://stackoverflow.com/questions/12026441/is-there-a-way-to-tell-browsers-to-honor-the-jpeg-exif-orientation
+46::1491282159577::http://stackoverflow.com/questions/7584794/accessing-jpeg-exif-rotation-data-in-javascript-on-the-client-side
+45::1491282243428::https://www.google.com/search?sourceid=chrome-psyapi2&ion=1&espv=2&ie=UTF-8&q=buying%20shares%20in%20the%20federal%20reserve&oq=buying%20shares%20in%20the%20federal%20reserve&aqs=chrome..69i57.6991j0j7
+45::1491282244503::https://www.google.com/search?sourceid=chrome-psyapi2&ion=1&espv=2&ie=UTF-8&q=does%20the%20federal%20reserve%20belong%20to%20the%20government&oq=does%20the%20federal%20reserve%20belong%20to%20the%20gover&aqs=chrome.1.69i57j0l4.9005j0j7
+45::1491282246305::https://www.google.com/search?sourceid=chrome-psyapi2&ion=1&espv=2&ie=UTF-8&q=jekyll%20island&oq=jekyll%20island&aqs=chrome..69i57j0l5.3033j0j7
+45::1491282263750::https://www.google.com/search?sourceid=chrome-psyapi2&ion=1&espv=2&ie=UTF-8&q=jekyll%20island&oq=jekyll%20island&aqs=chrome..69i57j0l5.3033j0j7
+46::1491282755693::http://stackoverflow.com/questions/4494437/jquery-or-javascript-determine-when-image-finished-loading
+46::1491283694816::http://stackoverflow.com/questions/7584794/accessing-jpeg-exif-rotation-data-in-javascript-on-the-client-side
