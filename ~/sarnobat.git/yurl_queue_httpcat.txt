@@ -1452,3 +1452,13 @@
 29172::1491803421375::https://content.coedcherry.com/kamilla-18/2006060106454601052/15.jpg
 29172::1491803422406::https://content.coedcherry.com/kamilla-18/2006060106454601052/10.jpg
 29172::1491803430897::https://www.coedcherry.com/models/kamilla-18/galleries/2233
+45::1491860383869::https://docs.google.com/spreadsheets/d/1xDtpEDRt9UcMk48ai8jVWXIfNC5M-Xv2A1EKcHl4U4M/edit#gid=0
+46::1491872880991::https://github.com/alexkazik/textwrangler-remotecontrol
+46::1491884111726::http://unix.stackexchange.com/questions/185829/which-version-of-nfs-is-my-nfs-server-using
+45::1491884183398::http://english.stackexchange.com/questions/137855/as-quick-as-we-can
+45::1491884229117::http://www.dailywritingtips.com/flat-adverbs-are-flat-out-useful/
+45::1491884581673::http://english.stackexchange.com/questions/383858/is-drive-safe-grammatically-correct-and-other-adjectives-as-adverbs
+29172::1491884936550::https://pbs.twimg.com/media/B20bHE7CQAEPURT.jpg
+46::1491885502469::https://help.ubuntu.com/community/Autofs
+46::1491885516533::http://stackoverflow.com/questions/1364826/opening-a-remote-file-with-textwrangler/43335890#43335890
+46::1491885518496::http://www.techradar.com/how-to/computing/apple/terminal-101-running-applescripts-from-the-terminal-1305736
