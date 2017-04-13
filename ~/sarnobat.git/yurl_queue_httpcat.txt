@@ -1479,3 +1479,9 @@
 46::1491972961527::http://unix.stackexchange.com/questions/106160/linux-difference-between-using-autofs-with-nfs-and-just-using-fstab
 45::1491974585369::http://www.mirror.co.uk/sport/football/news/hideous-liverpool-purple-and-yellow-kit-888504
 45::1491974589382::http://i3.mirror.co.uk/incoming/article888510.ece/ALTERNATES/s615b/liverpool%20kit%20full.JPG
+45::1492022827251::https://www.reference.com/art-literature/fox-sports-2-available-comcast-4c599f052d7b378e
+45::1492060005831::https://www.google.com/search?q=everybody%27s+life+is+better+than+mine&oq=everybody%27s+life+&aqs=chrome.2.69i57j0l5.12323j0j7&sourceid=chrome&es_sm=91&ie=UTF-8
+45::1492060025921::https://www.quora.com/Why-does-it-always-seem-that-everyone-elses-life-is-so-much-better-than-ones-own
+45::1492060032384::https://www.google.com/search?sourceid=chrome-psyapi2&ion=1&espv=2&ie=UTF-8&q=everyone%20has%20their%20problems&oq=everyone%20has%20their%20problems&aqs=chrome..69i57j0l5.5542j0j7
+45::1492060038757::https://www.google.com/search?num=40&q=homer%27s+odyssey+documentary&oq=homer%27s+odyssey+documentary&gs_l=serp.3..0i22i30k1.5433.6868.0.7123.12.11.0.0.0.0.157.1128.6j5.11.0....0...1.1.64.serp..1.11.1126...0j0i20k1j0i67k1.Dd9E2-So8Rg
+45::1492064088875::https://www.youtube.com/channel/UCGov3v6D4LdhVFbTd-aBG7g/videos
