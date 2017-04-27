@@ -2536,3 +2536,7 @@
 46::1493176748457::http://zsh.sourceforge.net/Doc/Release/User-Contributions.html
 46::1493176783907::https://opensource.apple.com/
 46::1493176790240::https://opensource.apple.com/source/zsh/zsh-65/zsh/Functions/Misc/zargs.auto.html
+45::1493258250517::http://www.nalinidance.com/bollywood_class.html
+46::1493258276153::http://community.bittiger.io/uploads/files/1470965974311-cleancodehandbook_v1.0.1.pdf
+46::1493258295315::https://leetcode.com/book/
+46::1493258317458::http://stackoverflow.com/questions/8748831/when-do-we-need-curly-braces-in-variables-using-bash/43623909#43623909
