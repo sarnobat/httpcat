@@ -93,7 +93,7 @@ public class HttpCat {
         //          System.out.println("CommandLineOptionsExample.parse() - SRIDHAR: 5");
     } catch (Exception e) {
           //        System.out.println("CommandLineOptionsExample.parse() - SRIDHAR: 7");    
-      e.printStackTrace();
+//      e.printStackTrace();
       System.err.println("Port already listened on.");
       System.exit(-1);
     }
