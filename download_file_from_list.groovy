@@ -73,7 +73,12 @@ public class DownloadFileFromList {
 
 			// Write the url to a success file
 			File successFile = Paths.get(successFilePath).toFile();
-			FileUtils.writeLines(successFile, ImmutableList.of(url), true);
+			String entry = url + "::" + destPathNonColliding;
+			if (Paths.get(destPathNonColliding).toFile().exists()) {
+				FileUtils.writeLines(successFile, ImmutableList.of(entry), true);
+			} else {
+				System.err.println("[ERROR] Did not get downloaded to expected location: " + entry);
+			}
 
 			// print the URL in case we want to do more things after (but note
 			// it is
