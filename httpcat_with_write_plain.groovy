@@ -45,6 +45,14 @@ public class HttpCat {
       System.err.println("[DEBUG] response constructed");
       return r;
     }
+
+
+    @GET
+    @javax.ws.rs.Path("")
+    @Produces("application/json")
+    public Response health() {
+	return Response.ok().header("Access-Control-Allow-Origin", "*").type("application/json").entity(new JSONObject().toString()).build();
+    }
   }
 
   private static String filepath;// = System.getProperty("user.home") +
