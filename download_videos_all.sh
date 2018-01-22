@@ -1,3 +1,7 @@
+##
+## Do not run this every 30 minutes, you'll get a pileup
+##
+
 # Generate the list of all videos
 cat ~/sarnobat.git/yurl_queue_httpcat.txt ~/sarnobat.git/db/yurl_flatfile_db/yurl_queue_2017.txt | grep -i -P '((dailymotion\.com)|(youtu\.be)|(youtube\.com))' | grep -v '/playlist' | grep -v '/results' | grep -v '/user' | perl -pe 's{[0-9]+::[0-9]+::}{}g'  | perl -pe 's{[0-9]+::(.*)::[0-9]+}{$1}g' | tee ~/sarnobat.git/db/auto/yurl_queue_httpcat_videos.txt
 
