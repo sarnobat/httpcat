@@ -43,57 +43,15 @@ public class HttpCat {
     }
   }
 
-  private static String filepath;// = System.getProperty("user.home") +
-                                 // "/sarnobat.git/yurl_queue_httpcat.txt";
+  private static String filepath = System.getProperty("user.home") + "/sarnobat.git/yurl_queue_httpcat.txt";
 
   public static void main(String[] args)
       throws URISyntaxException, IOException, KeyManagementException, UnrecoverableKeyException,
       NoSuchAlgorithmException, KeyStoreException, CertificateException, InterruptedException {
     
-    String port;
-    _parseOptions: {
-
-      Options options = new Options()
-          .addOption("h", "help", false, "show help.");
-
-      Option option = Option.builder("f").longOpt("file").desc("use FILE to write incoming data to").hasArg()
-          .argName("FILE").build();
-      options.addOption(option);
-
-      // This doesn't work with java 7
-      // "hasarg" is needed when the option takes a value
-      options.addOption(Option.builder("p").longOpt("port").hasArg().required().build());
-
-      try {
-        CommandLine cmd = new DefaultParser().parse(options, args);
-        port = cmd.getOptionValue("p", "4444");
-        filepath = cmd.getOptionValue("f");
-  //      System.out.println("CommandLineOptionsExample.parse() - SRIDHAR: port = " + port);
-    //    System.out.println("CommandLineOptionsExample.parse() - SRIDHAR: a = " + cmd.getOptionValue("f"));
-
-        if (cmd.hasOption("h")) {
-        
-//        System.out.println("CommandLineOptionsExample.parse() - SRIDHAR: 1");
-          // This prints out some help
-          HelpFormatter formater = new HelpFormatter();
-
-          formater.printHelp("httpcat_with_write.groovy", options);
-          System.exit(0);
-        }
-  //              System.out.println("CommandLineOptionsExample.parse() - SRIDHAR: 2");
-      } catch (ParseException e) {
-    //          System.out.println("CommandLineOptionsExample.parse() - SRIDHAR: 3");
-        e.printStackTrace();
-	System.exit(-1);
-      }
-    }
     try {
-      //      System.out.println("CommandLineOptionsExample.parse() - SRIDHAR: 4");
-      JdkHttpServerFactory.createHttpServer(new URI("http://localhost:" + port + "/"), new ResourceConfig(MyResource.class));
-        //          System.out.println("CommandLineOptionsExample.parse() - SRIDHAR: 5");
+      JdkHttpServerFactory.createHttpServer(new URI("http://localhost:" + 4465 + "/"), new ResourceConfig(MyResource.class));
     } catch (Exception e) {
-          //        System.out.println("CommandLineOptionsExample.parse() - SRIDHAR: 7");    
-//      e.printStackTrace();
       System.err.println("Port already listened on.");
       System.exit(-1);
     }
