@@ -11,7 +11,7 @@ import org.apache.commons.io.FilenameUtils;
 import com.google.common.collect.ImmutableList;
 
 /**
- * If successful, remove the line from the file
+ * Uses wget. If successful, remove the line from the file
  */
 public class DownloadFileFromList {
 
@@ -36,7 +36,7 @@ public class DownloadFileFromList {
 			if (!Paths.get(destination).toFile().exists()) {
 				throw new RuntimeException("Does not exist: " + destination);
 			}
-
+try {
 			String url1 = new URL(url).getPath();
 			String b = FilenameUtils.getBaseName(url1);
 			String x = FilenameUtils.getExtension(url1);
@@ -63,12 +63,13 @@ public class DownloadFileFromList {
 
 			// Check that the file exists locally
 			if (!Paths.get(destPathNonColliding).toFile().exists()) {
-				throw new RuntimeException("Did not get downloaded successfully: "
-						+ destPathNonColliding);
+			//	throw new RuntimeException("Did not get downloaded successfully: "
+			//			+ destPathNonColliding);
+				System.err.println("[ERROR: File did not get downloaded, skipping]");
 			}
-
 			// Remove the line from the top of the file
-			linesList.remove(0);
+			String attemptedUrl = linesList.remove(0);
+			linesList.add(attemptedUrl);
 			FileUtils.writeLines(listfile1, linesList);
 
 			// Write the url to a success file
@@ -79,7 +80,15 @@ public class DownloadFileFromList {
 			} else {
 				System.err.println("[ERROR] Did not get downloaded to expected location: " + entry);
 			}
+} catch (Exception e) {
+                                System.err.println("[ERROR] Exception: " + e);
+//throw new RuntimeException("Temp");
 
+                        // Remove the line from the top of the file
+                        String attemptedUrl = linesList.remove(0);
+                        linesList.add(attemptedUrl);
+                        FileUtils.writeLines(listfile1, linesList);
+}
 			// print the URL in case we want to do more things after (but note
 			// it is
 			// unreliable)

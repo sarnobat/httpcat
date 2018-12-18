@@ -24,6 +24,7 @@ public class DownloadVideosFromList {
 		String successFilePath = args[2];
 		String failureFilePath = args[3];
 		File listfile1 = Paths.get(listFile).toFile();
+System.err.println("Iterating over lines in " + listFile);
 
 		while (true) {
 			List<String> linesList = FileUtils.readLines(listfile1);
@@ -32,6 +33,7 @@ public class DownloadVideosFromList {
 				return;
 			}
 			String url = linesList.get(0);
+				System.err.println("main(): url = " + url);
 			if (!url.contains("yout") && !url.contains("dailymo")) {
 				throw new RuntimeException("This should have gotten filtered: " + url);
 			}
@@ -57,6 +59,7 @@ public class DownloadVideosFromList {
 			// Write the url to either the success file or the failure file
 			File successFile = Paths.get(successOrFailureFilePath).toFile();
 			FileUtils.writeLines(successFile, ImmutableList.of(url), true);
+System.err.println("[DEBUG] Wrote to " + successOrFailureFilePath + ":\t" + url);
 
 			// print the URL in case we want to do more things after (but note
 			// it is unreliable)
