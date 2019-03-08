@@ -24,8 +24,19 @@ public class DownloadFileFromList {
 		String destination = args[1];
 		String successFilePath = args[2];
 		File listfile1 = Paths.get(listFile).toFile();
-
+		// prevent downloading loads of "1111111.jpg" files  
+		Integer maxDownloads = Integer.valueOf(System.getProperty("maxDownloads","5"));
+int downloadedCount = 0;
+		Integer maxFailures = Integer.valueOf(System.getProperty("maxFailures", Integer.toString(Integer.MAX_VALUE)));
+		int failureCount = 0;
 		while (true) {
+			if (downloadedCount > maxDownloads) {
+				break;
+			}
+			if (failureCount > maxFailures) {
+				//break;
+				throw new RuntimeException("Too many failures: " + failureCount);
+			}
 			List<String> linesList = FileUtils.readLines(listfile1);
 			if (linesList.size() < 1) {
 				System.err.println("Finished");
@@ -45,18 +56,21 @@ try {
 			// find a file name that doesn't clash with what's on disk
 			String destPathNonColliding = determineDestinationPathAvoidingExisting(
 					destination + "/" + filename).toString();
-			Process p = new ProcessBuilder()
-					.directory(Paths.get(destination).toFile())
-					.command("echo", "hello world")
-					.command(
-							"/bin/sh",
-							"-c",
-							"wget --content-disposition --tries=3 --no-check-certificate --backups=10 --directory-prefix='"
-									+ destination + "' --output-document='" + destPathNonColliding
-									+ "' '" + url + "'").inheritIO().start();
+			String urlEscaped = new URL(url).getPath();
+	String commandWithSingleQuotesEecaped = "wget --content-disposition --tries=3 --no-check-certificate --backups=10 ";
+System.err.println("[DEBUG] command is  " + commandWithSingleQuotesEecaped);
+			
+                        Process p = new ProcessBuilder()
+                                        .directory(Paths.get(destination).toFile())
+                                        .command("echo", "hello world")
+                                        .command("wget", 
+"--content-disposition", "--tries","3", "--no-check-certificate", "--backups","10" 
+,"--directory-prefix=", destination,"--output-document", destPathNonColliding,url).inheritIO().start();
 			p.waitFor();
+			boolean success = false;
 			if (p.exitValue() == 0) {
-				System.err.println("appendToTextFile() - successfully downloaded " + url);
+				success = true;
+				++downloadedCount;
 			} else {
 				System.err.println("appendToTextFile() - error downloading " + url);
 			}
@@ -74,16 +88,25 @@ try {
 
 			// Write the url to a success file
 			File successFile = Paths.get(successFilePath).toFile();
-			String entry = url + "::" + destPathNonColliding;
+System.out.println("[DEBUG] line to write to disk before unescaping:  " + url + "::" + destPathNonColliding);
+			String entry = unescape(
+				url + "::" + destPathNonColliding
+			)
+			;
+System.out.println("[DEBUG] line to write to disk after unescaping:  " + entry);
 			if (Paths.get(destPathNonColliding).toFile().exists()) {
 				FileUtils.writeLines(successFile, ImmutableList.of(entry), true);
+				System.err.println("appendToTextFile() - successfully downloaded " + url + " to " + destPathNonColliding);
 			} else {
 				System.err.println("[ERROR] Did not get downloaded to expected location: " + entry);
 			}
 } catch (Exception e) {
-                                System.err.println("[ERROR] Exception: " + e);
-//throw new RuntimeException("Temp");
-
+	++failureCount;
+                                System.err.println("[ERROR] Exception: failure number " + failureCount + " " + e);
+if (true){
+e.printStackTrace();
+//throw new RuntimeException("Temp: " + url, e);
+}
                         // Remove the line from the top of the file
                         String attemptedUrl = linesList.remove(0);
                         linesList.add(attemptedUrl);
@@ -95,6 +118,19 @@ try {
 			System.out.println(url);
 		}
 	}
+
+	private static String escape(String unescaped) {
+                //String after = "\\\\\\x27";
+                String after = '\\' + "x27";
+                //String after = '\\' + '\\' + '\\' + "x27";
+		return unescaped.replace("'", after);
+	}
+
+
+        private static String unescape(String escaped) {
+		String before =  '\\' + "x27";
+                return escaped.replace(before, "'");
+        }
 
 	private static java.nio.file.Path determineDestinationPathAvoidingExisting(
 			String iDestinationFilePath) throws IllegalAccessError {

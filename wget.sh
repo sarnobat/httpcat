@@ -1,3 +1,6 @@
+## PRECONDITION
+##   Do not call this script if the url was already fetched. We'll get huge numbers of duplicates
+
 URL=$1
 FILE_WITH_QUERY_PARAMS=`basename $1`
 FILE_WITHOUT_QUERY_PARAMS=`echo $FILE_WITH_QUERY_PARAMS | perl -pe 's{\?.*}{}g'`
