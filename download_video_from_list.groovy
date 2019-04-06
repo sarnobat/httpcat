@@ -26,17 +26,24 @@ public class DownloadVideosFromList {
 		File listfile1 = Paths.get(listFile).toFile();
 System.err.println("Iterating over lines in " + listFile);
 
+		int attemptedCount = 0;
 		while (true) {
+			++attemptedCount;
+			if (attemptedCount > Integer.parseInt(System.getProperty("max","100"))) {
+			        System.err.println("[DEBUG] exceeded limit");
+				break;
+			}
 			List<String> linesList = FileUtils.readLines(listfile1);
 			if (linesList.size() < 1) {
 				System.err.println("Finished");
 				return;
 			}
 			String url = linesList.get(0);
-				System.err.println("main(): url = " + url);
+			System.err.println("main(): url = " + url);
 			if (!url.contains("yout") && !url.contains("dailymo")) {
-				throw new RuntimeException("This should have gotten filtered: " + url);
+				//throw new RuntimeException("This should have gotten filtered: " + url);
 			}
+			System.err.println("[DEBUG] About to launch process for " + url);
 
 			Process p = new ProcessBuilder().directory(Paths.get(destinationDir).toFile())
 					.command(ImmutableList.of(YOUTUBE_DOWNLOAD, url)).inheritIO().start();
