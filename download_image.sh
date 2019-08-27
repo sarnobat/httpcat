@@ -7,7 +7,7 @@ do
   echo "$line"
 #  FILE=`groovy ~/bin/url2file.groovy "$line"`
 #  TARGET=`groovy ~/bin/file_conflicting_avoid.groovy "$FILE"`
-  cd /3TB/move_to_unsorted/images/ &&  echo "$line" \
+  cd ${1:-/media/sarnobat/3TB/disks/bisque/new/unsorted/images} &&  echo "$line" \
 	| perl -pe 's{.*http}{http}g'  \
 	| grep -P ".*(jpg|jpeg|png|gif|gifv)[?]?" \
 	| xargs --delimiter '\n' --max-args=1 --no-run-if-empty sh /home/sarnobat/github/httpcat/wget.sh ~/bin/file_exists_check.groovy  2>&1 \
