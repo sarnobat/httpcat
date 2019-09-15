@@ -9,6 +9,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.base.Joiner;
 
 /**
  * Uses wget. If successful, remove the line from the file
@@ -57,22 +58,25 @@ try {
 			String destPathNonColliding = determineDestinationPathAvoidingExisting(
 					destination + "/" + filename).toString();
 			String urlEscaped = new URL(url).getPath();
-	String commandWithSingleQuotesEecaped = "wget --content-disposition --tries=3 --no-check-certificate --backups=10 ";
-System.err.println("[DEBUG] command is  " + commandWithSingleQuotesEecaped);
+//	String commandWithSingleQuotesEecaped = "wget --content-disposition --tries=3 --no-check-certificate --backups=10 ";
 			
-                        Process p = new ProcessBuilder()
+                        ProcessBuilder pb = new ProcessBuilder()
                                         .directory(Paths.get(destination).toFile())
                                         .command("echo", "hello world")
                                         .command("wget", 
-"--content-disposition", "--tries","3", "--no-check-certificate", "--backups","10" 
-,"--directory-prefix=", destination,"--output-document", destPathNonColliding,url).inheritIO().start();
+"--content-disposition", "--tries","3", "--no-check-certificate", "--backups=10" 
+,"--directory-prefix=" + destination,"--output-document", destPathNonColliding,url).inheritIO();
+System.err.println("[DEBUG] command is  " + Joiner.on(" ").join(pb.command()));
+			Process p = pb.start();
 			p.waitFor();
 			boolean success = false;
+			boolean failed = false;
 			if (p.exitValue() == 0) {
 				success = true;
 				++downloadedCount;
 			} else {
 				System.err.println("appendToTextFile() - error downloading " + url);
+				failed = true;
 			}
 
 			// Check that the file exists locally
@@ -80,6 +84,10 @@ System.err.println("[DEBUG] command is  " + commandWithSingleQuotesEecaped);
 			//	throw new RuntimeException("Did not get downloaded successfully: "
 			//			+ destPathNonColliding);
 				System.err.println("[ERROR: File did not get downloaded, skipping]");
+				failed = true
+			}
+			if (failed) {
+				++failureCount;
 			}
 			// Remove the line from the top of the file
 			String attemptedUrl = linesList.remove(0);
