@@ -21,7 +21,7 @@ public class DownloadVideosFromList {
 		}
 		String listFile = args[0];
 		String destinationDir = args[1];
-		String successFilePath = args[2];
+		String successFilePath = args[2]; // REDUNDANT - we update this when doing a "file exists" check 
 		String failureFilePath = args[3];
 		File listfile1 = Paths.get(listFile).toFile();
 System.err.println("Iterating over lines in " + listFile);
