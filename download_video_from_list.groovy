@@ -12,9 +12,10 @@ import com.google.common.collect.ImmutableList;
  */
 public class DownloadVideosFromList {
 
-	public static final String YOUTUBE_DOWNLOAD = "/home/sarnobat/bin/youtube_download";
+	public static final String YOUTUBE_DOWNLOAD = System.getProperty("user.home") + "/bin/youtube_download";
 
 	public static void main(String[] args) throws IOException, InterruptedException {
+System.err.println("DownloadVideosFromList() - begin");
 		if (args.length != 4) {
 			throw new RuntimeException(
 					"Usage: groovy download_file_from_list.groovy [list.txt] [/destdir] [success.txt] ");

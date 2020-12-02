@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Generate the list of all images
-cat ~/sarnobat.git/yurl_queue_httpcat.txt | grep -i -P '(JPG|PNG|GIF)' | perl -pe 's{[0-9]+::[0-9]+::}{}g' | tee /tmp/yurl_queue_httpcat_images.txt 2>&1 >/dev/null
+cat ~/db.git/yurl_queue_httpcat.txt | grep -i -P '(JPG|PNG|GIF)' | perl -pe 's{[0-9]+::[0-9]+::}{}g' | tee /tmp/yurl_queue_httpcat_images.txt 2>&1 >/dev/null
 
 # Find out which files have not been downloaded
 # grep -f crashes if the file is too large

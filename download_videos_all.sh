@@ -5,8 +5,8 @@
 ##
 
 # Generate the list of all videos
-cat ~/sarnobat.git/db/yurl_flatfile_db/yurl_queue_2017.txt  ~/sarnobat.git/yurl_queue_httpcat.txt | sh ~/bin/yurl_filter_videos.sh | grep -v '/playlist' | grep -v '/results' | grep -v '/user' | perl -pe 's{[0-9]+::[0-9]+::}{}g'  | perl -pe 's{[0-9]+::(.*)::[0-9]+}{$1}g' | tee /tmp/yurl_queue_httpcat_videos.txt > /dev/null
-cat ~/sarnobat.git/db/yurl_flatfile_db/yurl_queue_2017.txt  ~/sarnobat.git/yurl_queue_httpcat.txt | grep -i -P '\.mp4' | perl -pe 's{[0-9]+::[0-9]+::}{}g'  | perl -pe 's{[0-9]+::(.*)::[0-9]+}{$1}g' | tee -a /tmp/yurl_queue_httpcat_videos.txt > /dev/null
+cat ~/sarnobat.git/db/yurl_flatfile_db/yurl_queue_2017.txt ~/db.git/yurl_queue_httpcat.txt | sh ~/bin/yurl_filter_videos.sh | grep -v '/playlist' | grep -v '/results' | grep -v '/user' | perl -pe 's{[0-9]+::[0-9]+::}{}g'  | perl -pe 's{[0-9]+::(.*)::[0-9]+}{$1}g' | tee /tmp/yurl_queue_httpcat_videos.txt > /dev/null
+cat ~/sarnobat.git/db/yurl_flatfile_db/yurl_queue_2017.txt  ~/db.git/yurl_queue_httpcat.txt | grep -i -P '\.mp4' | perl -pe 's{[0-9]+::[0-9]+::}{}g'  | perl -pe 's{[0-9]+::(.*)::[0-9]+}{$1}g' | tee -a /tmp/yurl_queue_httpcat_videos.txt > /dev/null
 
 update_tmp_files() {
 	cat ~/sarnobat.git/db/yurl_flatfile_db/videos_download_succeeded.txt  | perl -pe 's{::.*}{}g' | sh ~/bin/yurl_filter_videos.sh | uniq | sort | uniq > /tmp/yurl_queue_httpcat_videos_downloaded.txt
@@ -23,7 +23,7 @@ cat /tmp/yurl_queue_httpcat_videos_undownloaded.txt | shuf | head -${1:-2} | tee
 
 # Download them, remove them from the input file, and record which have been downloaded in the output file
 # 3rd arg is redundant
-touch ~/sarnobat.git/db/auto/yurl_queue_httpcat_videos_failed.txt; chmod 777 ~/bin/youtube_download ; cd ~/github/httpcat && groovy download_video_from_list.groovy  /tmp/yurl_queue_httpcat_videos_undownloaded_reduced.txt /media/sarnobat/3TB/new/move_to_unsorted/videos/ /tmp/yurl_queue_httpcat_videos_downloaded.txt ~/sarnobat.git/db/auto/yurl_queue_httpcat_videos_failed.txt 2> ~/download_video_from_list.log  | tee -a /tmp/yurl_queue_httpcat_videos_downloaded_unreliable.txt 
+touch ~/sarnobat.git/db/auto/yurl_queue_httpcat_videos_failed.txt; chmod 777 ~/bin/youtube_download ; cd ~/github/httpcat && groovy download_video_from_list.groovy  /tmp/yurl_queue_httpcat_videos_undownloaded_reduced.txt ~/videos/ /tmp/yurl_queue_httpcat_videos_downloaded.txt ~/sarnobat.git/db/auto/yurl_queue_httpcat_videos_failed.txt 2> ~/download_video_from_list.log  | tee -a /tmp/yurl_queue_httpcat_videos_downloaded_unreliable.txt 
 
 
 
