@@ -6,10 +6,10 @@
 
 # Generate the list of all videos
 cat ~/sarnobat.git/db/yurl_flatfile_db/yurl_queue_2017.txt ~/db.git/yurl_queue_httpcat.txt | sh ~/bin/yurl_filter_videos.sh | grep -v '/playlist' | grep -v '/results' | grep -v '/user' | perl -pe 's{[0-9]+::[0-9]+::}{}g'  | perl -pe 's{[0-9]+::(.*)::[0-9]+}{$1}g' | tee /tmp/yurl_queue_httpcat_videos.txt > /dev/null
-cat ~/sarnobat.git/db/yurl_flatfile_db/yurl_queue_2017.txt  ~/db.git/yurl_queue_httpcat.txt | grep -i -P '\.mp4' | perl -pe 's{[0-9]+::[0-9]+::}{}g'  | perl -pe 's{[0-9]+::(.*)::[0-9]+}{$1}g' | tee -a /tmp/yurl_queue_httpcat_videos.txt > /dev/null
+cat ~/sarnobat.git/db/yurl_flatfile_db/yurl_queue_2017.txt ~/db.git/yurl_queue_httpcat.txt | grep -i -P '\.mp4' | perl -pe 's{[0-9]+::[0-9]+::}{}g'  | perl -pe 's{[0-9]+::(.*)::[0-9]+}{$1}g' | tee -a /tmp/yurl_queue_httpcat_videos.txt > /dev/null
 
 update_tmp_files() {
-	cat ~/sarnobat.git/db/yurl_flatfile_db/videos_download_succeeded.txt  | perl -pe 's{::.*}{}g' | sh ~/bin/yurl_filter_videos.sh | uniq | sort | uniq > /tmp/yurl_queue_httpcat_videos_downloaded.txt
+	cat ~/sarnobat.git/db/yurl_flatfile_db/videos_download_succeeded.txt   | grep '\.part' | perl -pe 's{::.*}{}g' | sh ~/bin/yurl_filter_videos.sh | uniq | sort | uniq > /tmp/yurl_queue_httpcat_videos_downloaded.txt
 	touch /tmp/yurl_queue_httpcat_videos_downloaded.txt ;  comm -23 <(sort /tmp/yurl_queue_httpcat_videos.txt)  <(sort /tmp/yurl_queue_httpcat_videos_downloaded.txt) | grep -v channel | tac | tee /tmp/yurl_queue_httpcat_videos_undownloaded.txt >/dev/null
 }
 
@@ -19,11 +19,15 @@ update_tmp_files
 #cat ~/sarnobat.git/db/auto/yurl_queue_httpcat_videos.txt | grep -v -f ~/sarnobat.git/db/auto/yurl_queue_httpcat_videos_downloaded.txt | grep -v channel | tac | tee /tmp/yurl_queue_httpcat_videos_undownloaded.txt
 
 # TEMPORARILY REDUCE the number of videos downloaded, the server is getting overloaded.
-cat /tmp/yurl_queue_httpcat_videos_undownloaded.txt | shuf | head -${1:-2} | tee /tmp/yurl_queue_httpcat_videos_undownloaded_reduced.txt
+cat /tmp/yurl_queue_httpcat_videos_undownloaded.txt | sort | uniq | shuf | head -${1:-2} | tee /tmp/yurl_queue_httpcat_videos_undownloaded_reduced.txt
+
+cat /tmp/yurl_queue_httpcat_videos_undownloaded_reduced.txt
+
+
 
 # Download them, remove them from the input file, and record which have been downloaded in the output file
 # 3rd arg is redundant
-touch ~/sarnobat.git/db/auto/yurl_queue_httpcat_videos_failed.txt; chmod 777 ~/bin/youtube_download ; cd ~/github/httpcat && groovy download_video_from_list.groovy  /tmp/yurl_queue_httpcat_videos_undownloaded_reduced.txt ~/videos/ /tmp/yurl_queue_httpcat_videos_downloaded.txt ~/sarnobat.git/db/auto/yurl_queue_httpcat_videos_failed.txt 2> ~/download_video_from_list.log  | tee -a /tmp/yurl_queue_httpcat_videos_downloaded_unreliable.txt 
+touch ~/sarnobat.git/db/auto/yurl_queue_httpcat_videos_failed.txt; chmod 777 ~/bin/youtube_download ; cd ~/github/httpcat && cat /tmp/yurl_queue_httpcat_videos_undownloaded_reduced.txt | groovy download_video_from_list_v2.groovy  /tmp/yurl_queue_httpcat_videos_undownloaded_reduced.txt ~/videos/ /tmp/yurl_queue_httpcat_videos_downloaded.txt ~/sarnobat.git/db/auto/yurl_queue_httpcat_videos_failed.txt 2> ~/download_video_from_list.log  | tee -a /tmp/yurl_queue_httpcat_videos_downloaded_unreliable.txt 
 
 
 
@@ -35,6 +39,7 @@ echo "[DEBUG] Updating list of undownloaded videos for next run."
 #echo "[DEBUG] Finished"
 ## Find out which videos have not been downloaded (again - so we have accurate state that we can examine for debugging)
 #touch /tmp/yurl_queue_httpcat_videos_downloaded.txt ; cat /tmp/yurl_queue_httpcat_videos.txt | grep -v -f /tmp/yurl_queue_httpcat_videos_downloaded.txt | grep -v channel | tac | tee /tmp/yurl_queue_httpcat_videos_undownloaded.txt >/dev/null
+
 update_tmp_files
 
 echo "[DEBUG] Finished updating list of undownloaded videos for next run."

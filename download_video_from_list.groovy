@@ -10,6 +10,7 @@ import com.google.common.collect.ImmutableList;
 /**
  * If successful, remove the line from the file
  */
+// Is there a way to rewrite this without specifying the input file and using stdin instead?
 public class DownloadVideosFromList {
 
 	public static final String YOUTUBE_DOWNLOAD = System.getProperty("user.home") + "/bin/youtube_download";
@@ -25,13 +26,15 @@ System.err.println("DownloadVideosFromList() - begin");
 		String successFilePath = args[2]; // REDUNDANT - we update this when doing a "file exists" check 
 		String failureFilePath = args[3];
 		File listfile1 = Paths.get(listFile).toFile();
-System.err.println("Iterating over lines in " + listFile);
+System.err.println("[DEBUG] Iterating over lines in " + listFile);
 
 		int attemptedCount = 0;
+		// Re-read the file on EVERY iteration
 		while (true) {
 			++attemptedCount;
 			if (attemptedCount > Integer.parseInt(System.getProperty("max","100"))) {
 			        System.err.println("[DEBUG] exceeded limit");
+				// we can't use stdin because we need to edit the source file
 				break;
 			}
 			List<String> linesList = FileUtils.readLines(listfile1);
