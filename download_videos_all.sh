@@ -27,7 +27,7 @@ cat /tmp/yurl_queue_httpcat_videos_undownloaded_reduced.txt
 
 # Download them, remove them from the input file, and record which have been downloaded in the output file
 # 3rd arg is redundant
-touch ~/sarnobat.git/db/auto/yurl_queue_httpcat_videos_failed.txt; chmod 777 ~/bin/youtube_download ; cd ~/github/httpcat && cat /tmp/yurl_queue_httpcat_videos_undownloaded_reduced.txt | groovy download_video_from_list_v2.groovy  /tmp/yurl_queue_httpcat_videos_undownloaded_reduced.txt ~/videos/ /tmp/yurl_queue_httpcat_videos_downloaded.txt ~/sarnobat.git/db/auto/yurl_queue_httpcat_videos_failed.txt 2> ~/download_video_from_list.log  | tee -a /tmp/yurl_queue_httpcat_videos_downloaded_unreliable.txt 
+touch ~/sarnobat.git/db/auto/yurl_queue_httpcat_videos_failed.txt; chmod 777 ~/bin/youtube_download ; cd ~/github/httpcat && cat /tmp/yurl_queue_httpcat_videos_undownloaded_reduced.txt | groovy download_video_from_list_v2.groovy  /tmp/yurl_queue_httpcat_videos_undownloaded_reduced.txt ~/videos/ /tmp/yurl_queue_httpcat_videos_downloaded.txt ~/sarnobat.git/db/auto/yurl_queue_httpcat_videos_failed.txt 2> /tmp/download_video_from_list.log  | tee -a /tmp/yurl_queue_httpcat_videos_downloaded_unreliable.txt 
 
 
 
