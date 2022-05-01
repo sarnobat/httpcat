@@ -43,7 +43,7 @@ public class HttpCat {
     }
   }
 
-  private static String filepath = System.getProperty("user.home") + "/sarnobat.git/db/yurl_flatfile_db/yurl_queue_httpcat.txt";
+  private static String filepath = System.getProperty("user.home") + "/db.git/yurl_flatfile_db/yurl_queue_httpcat.txt";
 
   public static void main(String[] args)
       throws URISyntaxException, IOException, KeyManagementException, UnrecoverableKeyException,

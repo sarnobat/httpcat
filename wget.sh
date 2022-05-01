@@ -24,8 +24,8 @@ wget \
 	&& echo "$URL" | tee -a ~/sarnobat.git/httpcat_images_downloaded.txt
 
 OUT="$PWD/$FILE"
-ls "$OUT"* | xargs -n 1 -I% groovy ~/bin/file_exists_check.groovy  % "$1" ~/sarnobat.git/db/yurl_flatfile_db/images_download_succeeded.txt ~/sarnobat.git/db/yurl_flatfile_db/images_download_failed.txt 
+ls "$OUT"* | xargs -n 1 -I% groovy ~/bin/file_exists_check.groovy  % "$1" ~/db.git/yurl_flatfile_db/images_download_succeeded.txt ~/db.git/yurl_flatfile_db/images_download_failed.txt 
 
-#echo "$URL::$PWD/$FILE" | tee -a ~/sarnobat.git/db/yurl_flatfile_db/images_download_succeeded.txt
+#echo "$URL::$PWD/$FILE" | tee -a ~/db.git/yurl_flatfile_db/images_download_succeeded.txt
 # do not redirect stderr to stdin. That is done only in the 
 # cron task for the log file.

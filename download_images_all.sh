@@ -8,7 +8,7 @@ cat ~/db.git/yurl_flatfile_db/yurl_queue_httpcat.txt | grep -i -P '(JPG|PNG|GIF|
 
 # Find out which files have not been downloaded
 # grep -f crashes if the file is too large
-#touch ~/sarnobat.git/db/auto/yurl_queue_httpcat_images_downloaded.txt ; cat ~/sarnobat.git/db/auto/yurl_queue_httpcat_images.txt | nice grep -v -f ~/sarnobat.git/db/auto/yurl_queue_httpcat_images_downloaded.txt | tee ~/sarnobat.git/db/auto/yurl_queue_httpcat_images_undownloaded.txt
+#touch ~/db.git/auto/yurl_queue_httpcat_images_downloaded.txt ; cat ~/db.git/auto/yurl_queue_httpcat_images.txt | nice grep -v -f ~/db.git/auto/yurl_queue_httpcat_images_downloaded.txt | tee ~/db.git/auto/yurl_queue_httpcat_images_undownloaded.txt
 touch ~/db.git/auto/yurl_queue_httpcat_images_downloaded.txt ; comm -2 -3  <(cat /tmp/yurl_queue_httpcat_images.txt | sort) <(cat ~/db.git/auto/yurl_queue_httpcat_images_downloaded.txt | perl -pe 's{::.*}{}g' | sort) | grep -v '^data:' | grep -v alamy | shuf | tee /tmp/yurl_queue_httpcat_images_undownloaded.txt 2>&1 >/dev/null
 
 # Download them, remove them from the input file, and record which have been downloaded in the output file
