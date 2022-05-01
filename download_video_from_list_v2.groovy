@@ -25,12 +25,12 @@ System.err.println("DownloadVideosFromList() - begin");
 			throw new RuntimeException(
 					"Usage: groovy download_file_from_list.groovy [list.txt] [/destdir] [success.txt] ");
 		}
-		// /tmp/yurl_queue_httpcat_videos_undownloaded_reduced.txt ~/videos/ /tmp/yurl_queue_httpcat_videos_downloaded.txt ~/sarnobat.git/db/auto/yurl_queue_httpcat_videos_failed.txt 2> ~/download_video_from_list.log  | tee -a /tmp/yurl_queue_httpcat_videos_downloaded_unreliable.txt 
+		// /tmp/yurl_queue_httpcat_videos_undownloaded_reduced.txt ~/videos/ /tmp/yurl_queue_httpcat_videos_downloaded.txt ~/db.git/auto/yurl_queue_httpcat_videos_failed.txt 2> ~/download_video_from_list.log  | tee -a /tmp/yurl_queue_httpcat_videos_downloaded_unreliable.txt 
 		String listFile = args[0]; // /tmp/yurl_queue_httpcat_videos_undownloaded_reduced.txt
 		String destinationDir = args[1]; // ~/videos/
 		String successFilePath = args[2]; // REDUNDANT - we update this when doing a "file exists" check 
 			// /tmp/yurl_queue_httpcat_videos_downloaded.txt
-		String failureFilePath = args[3]; // ~/sarnobat.git/db/auto/yurl_queue_httpcat_videos_failed.txt
+		String failureFilePath = args[3]; // ~/db.git/auto/yurl_queue_httpcat_videos_failed.txt
 		File listfile1 = Paths.get(listFile).toFile();
 System.err.println("[DEBUG] Iterating over lines in " + listFile);
 
