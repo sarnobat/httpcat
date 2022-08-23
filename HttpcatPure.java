@@ -27,25 +27,19 @@ public class HttpCatPure {
 		@GET
 		@javax.ws.rs.Path("")
 		@Produces("application/json")
-		public Response list(@QueryParam("value") String iValue,
-				@QueryParam("key") String iKey,
-				@QueryParam("categoryId") String iCategoryId)
+		public Response list(@QueryParam("value") String iValue)
 				throws JSONException, IOException {
 System.err.println("list()");
-System.err.println("Writing to stdout: " + iCategoryId + "::" + System.currentTimeMillis() + "::" + iValue);
-			System.out.println(iCategoryId + "::" + System.currentTimeMillis() + "::" + iValue);
-// TODO : read this from stdin. Somehow need to write it as plaintext:
-/*
-{Access-Control-Allow-Origin=[*], Content-Type=[application/json]}
-OutboundJaxrsResponse{status=200, reason=OK, hasEntity=false, closed=false, buffered=false}
-*/
-			Response r = Response.ok().header("Access-Control-Allow-Origin", "*")
-					.type("application/json").build();
-System.err.println(r.getHeaders().toString());
-System.err.println(r.toString());
-return r;
-		}
-	}
+System.out.println(iValue);
+//System.err.println("Writing to stdout: " + iCategoryId + "::" + System.currentTimeMillis() + "::" + iValue);
+//			System.out.println(iCategoryId + "::" + System.currentTimeMillis() + "::" + iValue);
+
+      return Response.ok().header("Access-Control-Allow-Origin", "*").type("application/json").build();
+    }
+  }
+
+
+
 
 	public static void main(String[] args) throws URISyntaxException, IOException,
 			KeyManagementException, UnrecoverableKeyException, NoSuchAlgorithmException,
