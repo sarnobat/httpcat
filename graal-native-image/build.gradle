@@ -1,0 +1,43 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+version = '1.0'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	implementation group: 'org.glassfish.jersey.containers', name: 'jersey-container-jdk-http', version: '2.25'
+	implementation group: 'org.glassfish.jersey.core', name: 'jersey-server', version: '2.25'
+	implementation group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.0.1'
+	implementation group: 'org.json', name: 'json', version: '20220320'
+
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs 'src/main/java', 'src/main/resources'
+        }
+    }
+}
+
+def mainClassName = 'com.HttpCatPure'
+jar {
+    manifest {
+        attributes (
+                "Main-Class": "$mainClassName",
+                'Implementation-Version': version,
+        )
+    }
+    from {
+		configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    exclude 'META-INF/*.RSA', 'META-INF/*.SF','META-INF/*.DSA'
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+//     dependsOn ('dependencies')
+}
+

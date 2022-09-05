@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry output="bin/main" kind="src" path="src/main/java">
+		<attributes>
+			<attribute name="gradle_scope" value="main"/>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin/default"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
+	<classpathentry sourcepath="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.containers/jersey-container-jdk-http/2.25/e54ae84f714d4ed460d076e4fa82cd2158b51d6a/jersey-container-jdk-http-2.25-sources.jar" kind="lib" path="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.containers/jersey-container-jdk-http/2.25/42ff7b48cb5c21e53f50d4dcaf373f16bdce23c9/jersey-container-jdk-http-2.25.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.25/5c52b0e90c204715c2511c83e2ea4ad28613ef6f/jersey-server-2.25-sources.jar" kind="lib" path="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.25/874ca16134872781b8c6a2adfe3bb2af80bc378/jersey-server-2.25.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-client/2.25/f6b20fa376cea66c84be582a1b71cf6dff971c9e/jersey-client-2.25-sources.jar" kind="lib" path="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-client/2.25/416a00562f25d7efdba015e5c21876d19163edd0/jersey-client-2.25.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.media/jersey-media-jaxb/2.25/85726ab08e83483207f9f86405720ecf07e25441/jersey-media-jaxb-2.25-sources.jar" kind="lib" path="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.media/jersey-media-jaxb/2.25/9aa3eeba90dce24f04bf27cd1a4e0d378ec697f/jersey-media-jaxb-2.25.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-common/2.25/c08cce31902b583500b625df4e38da9132689d68/jersey-common-2.25-sources.jar" kind="lib" path="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-common/2.25/b38e1a1af6ad75dd9037a767764b0d41801f1c9f/jersey-common-2.25.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/javax.ws.rs/javax.ws.rs-api/2.0.1/a20db7429fd8dfff74335ec867472b71c345049b/javax.ws.rs-api-2.0.1-sources.jar" kind="lib" path="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/javax.ws.rs/javax.ws.rs-api/2.0.1/104e9c2b5583cfcfeac0402316221648d6d8ea6b/javax.ws.rs-api-2.0.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/javax.annotation/javax.annotation-api/1.2/ad18a02db08eaee697f812e333f692fc51129e4a/javax.annotation-api-1.2-sources.jar" kind="lib" path="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/javax.annotation/javax.annotation-api/1.2/479c1e06db31c432330183f5cae684163f186146/javax.annotation-api-1.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-locator/2.5.0-b30/d5488b01c6d878830c4a396cdbbc09d10ca5c004/hk2-locator-2.5.0-b30-sources.jar" kind="lib" path="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-locator/2.5.0-b30/82056cbbd258647bbc6b80debe4e6b7121c61be9/hk2-locator-2.5.0-b30.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-api/2.5.0-b30/70098ddd6115099799bfee7de912aecb7e21561b/hk2-api-2.5.0-b30-sources.jar" kind="lib" path="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-api/2.5.0-b30/5c6688a6bafcd2098bef4ca45226d5355b816647/hk2-api-2.5.0-b30.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/javax.inject/2.5.0-b30/b1aa0171dc465b29b36701d462118067cca29f7f/javax.inject-2.5.0-b30-sources.jar" kind="lib" path="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/javax.inject/2.5.0-b30/54b36144fd2fb684f9cee73d96060bb82e4d363/javax.inject-2.5.0-b30.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/javax.validation/validation-api/1.1.0.Final/7d49b53caed9bd81d172807c3e096d24f3c57090/validation-api-1.1.0.Final-sources.jar" kind="lib" path="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/javax.validation/validation-api/1.1.0.Final/8613ae82954779d518631e05daa73a6a954817d5/validation-api-1.1.0.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.bundles.repackaged/jersey-guava/2.25/e2e4149532ab860d7dd771c505b01a6a7513df67/jersey-guava-2.25-sources.jar" kind="lib" path="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.bundles.repackaged/jersey-guava/2.25/4439bddb870b210e40ca2e953813930be424dc0c/jersey-guava-2.25.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/osgi-resource-locator/1.0.1/b5685f8eaa7d83351b185a82a92abcd1b8b87fc8/osgi-resource-locator-1.0.1-sources.jar" kind="lib" path="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/osgi-resource-locator/1.0.1/4ed2b2d4738aed5786cfa64cba5a332779c4c708/osgi-resource-locator-1.0.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-utils/2.5.0-b30/63e5edd5bdb6a1a6e6260e032155cc5b976ef6ee/hk2-utils-2.5.0-b30-sources.jar" kind="lib" path="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-utils/2.5.0-b30/b17fc7d8082ac00e59cd96fda9cff21f24cc367c/hk2-utils-2.5.0-b30.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/aopalliance-repackaged/2.5.0-b30/419fcbbbb55a03b4e4b8c8889038316ceb247a36/aopalliance-repackaged-2.5.0-b30-sources.jar" kind="lib" path="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/aopalliance-repackaged/2.5.0-b30/4e882c90e9ba801803991b4000e6d9ad216ac261/aopalliance-repackaged-2.5.0-b30.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/org.javassist/javassist/3.20.0-GA/d8fdc08a455bc0b28bc0bed1f0d032d935cee8e1/javassist-3.20.0-GA-sources.jar" kind="lib" path="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/org.javassist/javassist/3.20.0-GA/a9cbcdfb7e9f86fbc74d3afae65f2248bfbf82a0/javassist-3.20.0-GA.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/a00123f261762a7c5e0ec916a2c7c8298d29c400/javax.inject-1-sources.jar" kind="lib" path="/Users/sarnobat/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+</classpath>
