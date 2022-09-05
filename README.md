@@ -6,7 +6,7 @@ A "microservice" / unix philosophy rearchitecture of yurl
 
 ### native image problem
 
-It fails at runtime
+It fails at runtime (I should not use `--allow-incomplete-classpath`)
 ```
 Exception in thread "main" java.lang.NoClassDefFoundError: org.glassfish.jersey.internal.OsgiRegistry
 	at org.glassfish.jersey.internal.util.ReflectionHelper.getOsgiRegistryInstance(ReflectionHelper.java:1492)
