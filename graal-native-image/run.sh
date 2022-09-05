@@ -24,6 +24,7 @@ test -f $JAR_WITH_DEPS || exit 1
 # java -jar build/libs/graal_aotc_java-1.0.jar
 
 # Note: this is case-sensitive
+# Hmmmmm, --allow-incomplete-classpath is causing a runtime issue
 nice $NATIVE_IMAGE -jar $JAR_WITH_DEPS --no-fallback --no-server -H:Class=com.HttpCatPure -H:Name=httpcatpure --allow-incomplete-classpath
 
-./helloworld
+# ./helloworld
