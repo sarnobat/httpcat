@@ -33,83 +33,83 @@ import org.glassfish.grizzly.http.server.HttpServer;
  */
 public class HttpCatPure {
 
-    private static final URI BASE_URI = URI.create("http://0.0.0.0:4466/");
-    /**
-     * "Hello World" root resource path.
-     */
-    public static final String ROOT_PATH = "";
+	private static final URI BASE_URI = URI.create("http://0.0.0.0:4466/");
+	/**
+	 * "Hello World" root resource path.
+	 */
+	public static final String ROOT_PATH = "";
 
-    /**
-     * Main application entry point.
-     *
-     * @param args application arguments.
-     */
-    public static void main(String[] args) {
-        try {
-            System.out.println("\"Hello World\" Jersey Example App");
+	/**
+	 * Main application entry point.
+	 *
+	 * @param args application arguments.
+	 */
+	public static void main(String[] args) {
+		try {
+			System.out.println("\"Hello World\" Jersey Example App");
 
-            final HttpServer server = GrizzlyHttpServerFactory.createHttpServer(BASE_URI, create(), true);
-            Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    server.shutdownNow();
-                }
-            }));
-            server.start();
+			final HttpServer server = GrizzlyHttpServerFactory.createHttpServer(BASE_URI, create(), true);
+			Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+				@Override
+				public void run() {
+					server.shutdownNow();
+				}
+			}));
+			server.start();
 
-            System.out.println(
-                    String.format("Application started.%n"
-                    + "Try out %s%s%n"
-                    + "Stop the application using CTRL+C",
-                    BASE_URI, ROOT_PATH));
+			System.out.println(
+			    String.format("Application started.%n"
+			                  + "Try out %s%s%n"
+			                  + "Stop the application using CTRL+C",
+			                  BASE_URI, ROOT_PATH));
 
-            Thread.currentThread().join();
-        } catch (IOException | InterruptedException ex) {
-            Logger.getLogger("App").log(Level.SEVERE, null, ex);
-        }
+			Thread.currentThread().join();
+		} catch (IOException | InterruptedException ex) {
+			Logger.getLogger("App").log(Level.SEVERE, null, ex);
+		}
 
-    }
+	}
 
-    /**
-     * Test assertion indicator that a GET method handler has been called.
-     */
-    public static volatile boolean getMethodCalled = false;
-    /**
-     * Test assertion indicator that a HEAD method handler has been called.
-     */
-    public static volatile boolean headMethodCalled = false;
+	/**
+	 * Test assertion indicator that a GET method handler has been called.
+	 */
+	public static volatile boolean getMethodCalled = false;
+	/**
+	 * Test assertion indicator that a HEAD method handler has been called.
+	 */
+	public static volatile boolean headMethodCalled = false;
 
-    /**
-     * Create example application resource configuration.
-     *
-     * @return initialized resource configuration of the example application.
-     */
-    public static ResourceConfig create() {
-        final Resource.Builder resourceBuilder = Resource.builder(ROOT_PATH);
+	/**
+	 * Create example application resource configuration.
+	 *
+	 * @return initialized resource configuration of the example application.
+	 */
+	public static ResourceConfig create() {
+		final Resource.Builder resourceBuilder = Resource.builder(ROOT_PATH);
 
-        resourceBuilder.addMethod("GET").handledBy(new Inflector<ContainerRequestContext, Response>() {
+		resourceBuilder.addMethod("GET").handledBy(new Inflector<ContainerRequestContext, Response>() {
 
-                    @Override
-                    public Response apply(ContainerRequestContext data) {
-                    String iValue = data.getUriInfo().getQueryParameters().getFirst("value");
-System.err.println("list()");
-System.out.println(iValue);
-                        getMethodCalled = true;
-                        return Response.ok().header("Access-Control-Allow-Origin", "*").type("application/json").build();
-                    }
-                });
+			@Override
+			public Response apply(ContainerRequestContext data) {
+				String iValue = data.getUriInfo().getQueryParameters().getFirst("value");
+				System.err.println("list()");
+				System.out.println(iValue);
+				getMethodCalled = true;
+				return Response.ok().header("Access-Control-Allow-Origin", "*").type("application/json").build();
+			}
+		});
 
-        Inflector<ContainerRequestContext, Response> noContentResponder = new Inflector<ContainerRequestContext, Response>() {
+		Inflector<ContainerRequestContext, Response> noContentResponder = new Inflector<ContainerRequestContext, Response>() {
 
-            @Override
-            public Response apply(ContainerRequestContext data) {
-                headMethodCalled = true;
-                return Response.noContent().build();
-            }
-        };
-        resourceBuilder.addMethod("HEAD").handledBy(noContentResponder);
-        resourceBuilder.addMethod("OPTIONS").handledBy(noContentResponder);
+			@Override
+			public Response apply(ContainerRequestContext data) {
+				headMethodCalled = true;
+				return Response.noContent().build();
+			}
+		};
+		resourceBuilder.addMethod("HEAD").handledBy(noContentResponder);
+		resourceBuilder.addMethod("OPTIONS").handledBy(noContentResponder);
 
-        return new ResourceConfig().registerResources(resourceBuilder.build());
-    }
+		return new ResourceConfig().registerResources(resourceBuilder.build());
+	}
 }
