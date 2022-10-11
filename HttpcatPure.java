@@ -46,7 +46,7 @@ public class HttpCatPure {
 	 */
 	public static void main(String[] args) {
 		try {
-			System.out.println("\"Hello World\" Jersey Example App");
+			System.err.println("\"Hello World\" Jersey Example App");
 
 			final HttpServer server = GrizzlyHttpServerFactory.createHttpServer(BASE_URI, create(), true);
 			Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
