@@ -29,12 +29,13 @@ public class HttpCatPure {
 		@GET
 		@javax.ws.rs.Path("")
 		@Produces("application/json")
-		public Response list(@QueryParam("value") String iValue)
+		public Response list(@QueryParam("value") String iValue,
+					@QueryParam("categoryId") String iCategoryId)
 				throws JSONException, IOException {
 System.err.println("list()");
-System.out.println(iValue);
-//System.err.println("Writing to stdout: " + iCategoryId + "::" + System.currentTimeMillis() + "::" + iValue);
-//			System.out.println(iCategoryId + "::" + System.currentTimeMillis() + "::" + iValue);
+System.err.println(iValue);
+System.err.println("Writing to stdout: " + iCategoryId + "::" + System.currentTimeMillis() + "::" + iValue);
+			System.out.println(iCategoryId + "::" + System.currentTimeMillis() + "::" + iValue);
 
       return Response.ok().header("Access-Control-Allow-Origin", "*").type("application/json").build();
     }
