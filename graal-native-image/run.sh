@@ -33,6 +33,7 @@ test -f $JAR_WITH_DEPS || exit 1
 
 # Note: this is case-sensitive
 # Hmmmmm, --allow-incomplete-classpath is causing a runtime issue
-nice $NATIVE_IMAGE -jar $JAR_WITH_DEPS --no-fallback --no-server -H:Class=com.HttpCatPure -H:Name=httpcatpure --allow-incomplete-classpath
+nice $NATIVE_IMAGE -jar $JAR_WITH_DEPS --no-fallback --no-server -H:Class=com.HttpCatPure 		-H:Name=httpcatpure --allow-incomplete-classpath
+nice $NATIVE_IMAGE -jar $JAR_WITH_DEPS --no-fallback --no-server -H:Class=com.HttpCatWithWrite 	-H:Name=httpcatwithwrite --allow-incomplete-classpath
 
 # ./helloworld

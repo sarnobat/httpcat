@@ -15,6 +15,8 @@ dependencies {
 	implementation group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.0.1'
 	implementation group: 'org.json', name: 'json', version: '20220320'
 	implementation group: 'javax.activation', name: 'activation', version: '1.1.1'
+	implementation 'commons-io:commons-io:2.11.0'
+	implementation 'commons-cli:commons-cli:1.5.0'
 
 }
 
