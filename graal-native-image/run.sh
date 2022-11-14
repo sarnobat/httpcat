@@ -1,5 +1,13 @@
+cat <<EOF
+Latest version is in graal. Need to sync from:
+~/github/graalvm_aotc_java/5_java_httpcat_with_write/app
+
+~/github/graalvm_aotc_java/5_java_httpcat_with_write/run.sh
+~/github/httpcat/graal-native-image/run.sh
+EOF
+exit 1
 set -e
-set -o pipefail
+#set -o pipefail
 
 NATIVE_IMAGE=/Library/Java/JavaVirtualMachines/graalvm-ce-java11-20.1.0/Contents/Home/lib/svm/bin/native-image
 
