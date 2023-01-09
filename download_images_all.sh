@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -e
 #export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/
 
 # Generate the list of all images

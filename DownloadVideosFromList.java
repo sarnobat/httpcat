@@ -17,7 +17,7 @@ import com.google.common.collect.ImmutableList;
 // Is there a way to rewrite this without specifying the input file and using stdin instead?
 public class DownloadVideosFromList {
 
-	public static final String YOUTUBE_DOWNLOAD = System.getProperty("user.home") + "/bin/youtube_download";
+	public static final String YOUTUBE_DOWNLOAD = System.getProperty("user.home") + "/bin/youtube_download.sh";
 
 	public static void main(String[] args) throws IOException, InterruptedException {
 System.err.println("DownloadVideosFromList() - begin");
@@ -25,6 +25,15 @@ System.err.println("DownloadVideosFromList() - begin");
 			throw new RuntimeException(
 					"Usage: groovy download_file_from_list.groovy [list.txt] [/destdir] [success.txt] ");
 		}
+String[] pathsToCheck = {
+YOUTUBE_DOWNLOAD
+};
+        for (String pathToCheck : pathsToCheck) {
+        	if (!Paths.get(pathToCheck).toFile().exists()) {
+        		System.err.println("Does not exist: " + pathToCheck);
+				System.exit(-1);
+        	}
+        }
 		// /tmp/yurl_queue_httpcat_videos_undownloaded_reduced.txt ~/videos/ /tmp/yurl_queue_httpcat_videos_downloaded.txt ~/db.git/auto/yurl_queue_httpcat_videos_failed.txt 2> ~/download_video_from_list.log  | tee -a /tmp/yurl_queue_httpcat_videos_downloaded_unreliable.txt 
 		String listFile = args[0]; // /tmp/yurl_queue_httpcat_videos_undownloaded_reduced.txt
 		String destinationDir = args[1]; // ~/videos/
