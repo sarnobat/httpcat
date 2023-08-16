@@ -48,7 +48,7 @@ public class HttpCatWithWrite {
 	public static void main(String[] args)
 	throws URISyntaxException, IOException, KeyManagementException, UnrecoverableKeyException,
 	NoSuchAlgorithmException, KeyStoreException, CertificateException, InterruptedException {
-
+		System.err.println("[TODO] 2023-08 write a golang version even if you don't end up using it");
 		try {
 			JdkHttpServerFactory.createHttpServer(new URI("http://localhost:" + 4465 + "/"), new ResourceConfig(MyResource.class));
 		} catch (Exception e) {
