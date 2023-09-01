@@ -1,1 +1,0 @@
-HttpCatWithWrite.java

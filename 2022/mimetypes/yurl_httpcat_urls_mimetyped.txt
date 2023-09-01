@@ -1,1 +1,0 @@
-/home/sarnobat/sarnobat.git/db/yurl_flatfile_db/auto/yurl_httpcat_urls_mimetyped.txt

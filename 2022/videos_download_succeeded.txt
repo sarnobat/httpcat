@@ -1,1 +1,0 @@
-/home/sarnobat/sarnobat.git/db/yurl_flatfile_db/videos_download_succeeded.txt
