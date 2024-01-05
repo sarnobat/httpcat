@@ -1,10 +1,10 @@
 import java.io.IOException;
+import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.file.Paths;
 import java.security.KeyManagementException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
-import java.net.URI;
 import java.security.UnrecoverableKeyException;
 import java.security.cert.CertificateException;
 
