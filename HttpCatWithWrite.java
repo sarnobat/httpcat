@@ -27,7 +27,7 @@ public class HttpCatWithWrite {
 		@javax.ws.rs.Path("")
 		@Produces("application/json")
 		public Response list(@QueryParam("value") String iValue, @QueryParam("key") String iKey,
-		                     @QueryParam("categoryId") String iCategoryId) throws JSONException, IOException {
+		@QueryParam("categoryId") String iCategoryId) throws JSONException, IOException {
 			System.err.println("list()");
 			String line = iCategoryId + "::" + System.currentTimeMillis() + "::" + iValue;
 			System.err.println("Writing to stdout: " + line);
@@ -38,18 +38,21 @@ public class HttpCatWithWrite {
 			FileUtils.write(Paths.get(filepath).toFile(), line + "\n", true);
 			System.err.println("[DEBUG] wrote to file");
 			System.out.println(line);
-			return Response.ok().header("Access-Control-Allow-Origin", "*").type("application/json").build();
+			return Response.ok().header("Access-Control-Allow-Origin", "*").type("application/json")
+					.build();
 		}
 	}
 
-	private static String filepath = System.getProperty("user.home") + "/db.git/yurl_flatfile_db/yurl_queue_httpcat.txt";
+	private static String filepath = System.getProperty("user.home")
+			+ "/db.git/yurl_flatfile_db/yurl_queue_httpcat.txt";
 
 	public static void main(String[] args)
-	throws URISyntaxException, IOException, KeyManagementException, UnrecoverableKeyException,
-	NoSuchAlgorithmException, KeyStoreException, CertificateException, InterruptedException {
+			throws URISyntaxException, IOException, KeyManagementException, UnrecoverableKeyException,
+			NoSuchAlgorithmException, KeyStoreException, CertificateException, InterruptedException {
 		System.err.println("[TODO] 2023-08 write a golang version even if you don't end up using it");
 		try {
-			JdkHttpServerFactory.createHttpServer(new URI("http://localhost:" + 4465 + "/"), new ResourceConfig(MyResource.class));
+			JdkHttpServerFactory.createHttpServer(new URI("http://localhost:" + 4465 + "/"),
+					new ResourceConfig(MyResource.class));
 		} catch (Exception e) {
 			System.err.println("Port already listened on: 4465");
 			System.exit(-1);
